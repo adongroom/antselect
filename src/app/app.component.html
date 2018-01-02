@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <!--此处加了compareWidth 报错-->
+  <nz-select [compareWidth]="compareFn"  style="width: 120px;" [(ngModel)]="selectedOption"
+             [nzPlaceHolder]="'choose option'" nzAllowClear>
+    <nz-option
+      *ngFor="let option of options"
+      [nzLabel]="option.label"
+      [nzValue]="option">
+    </nz-option>
+  </nz-select>
+  <nz-select style="width: 120px;" [(ngModel)]="selectedOption" [nzPlaceHolder]="'choose option'">
+    <nz-option
+      *ngFor="let option of options"
+      [nzLabel]="option.label"
+      [nzValue]="option">
+    </nz-option>
+  </nz-select>
+  <div>selectedOption:{{selectedOption|json}}</div>
+  <button nz-button [nzType]="'primary'" (click)="edit()">
+    <span>模拟编辑（将selectOption对象更改）：</span>
+  </button>
+</div>
+
+
+
+<div style="text-align: center; margin-top: 40px">备注：4之后提供了compareWidth 在select中可以比较对象</div>
